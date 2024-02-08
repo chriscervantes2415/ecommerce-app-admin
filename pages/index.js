@@ -13,7 +13,7 @@ export default function Home() {
       <div className="text-center sm:text-left">
         <h1 className="text-3xl font-bold text-gray-900 sm:text-3xl">Welcome Back, {session.user.name}!</h1>
 
-        <p className="mt-1.5 text-md text-gray-500 max-w-lg">View the statistics about your business. Also manage and add productsss.</p>
+        <p className="mt-1.5 text-md text-gray-500 max-w-lg">View the statistics about your business. Also manage and add products.</p>
       </div>
 
       <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
