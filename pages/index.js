@@ -1,25 +1,27 @@
 import Header from "@/components/Header"
 import { signIn, signOut, useSession } from "next-auth/react"
+import Link from "next/link"
 
 
 export default function Home() {
   const { data: session } = useSession()
   if(session) {
     return <>
-    <Header></Header>
+    
     <header>
   <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
     <div className="sm:flex sm:items-center sm:justify-between">
       <div className="text-center sm:text-left">
-        <h1 className="text-3xl font-bold text-gray-900 sm:text-3xl">Welcome Backkkk, {session.user.name}!</h1>
+        <h1 className="text-3xl font-bold text-gray-900 sm:text-3xl">Welcome Back, <span className="text-green-500">{session.user.name}!</span></h1>
 
-        <p className="mt-1.5 text-md text-gray-500 max-w-lg">View the statistics about your business. Also manage and add products.</p>
+        <p className="mt-1.5 text-lg text-gray-500 max-w-lg">View the statistics about your business. Also manage and add products.</p>
       </div>
 
       <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
-        <button
+        <Link
+        
           className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-200 px-5 py-3 text-gray-500 transition hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:ring"
-          type="button"
+          href={'/products'}
         >
           <span className="text-md font-medium"> View Products </span>
 
@@ -37,7 +39,7 @@ export default function Home() {
               d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
             />
           </svg>
-        </button>
+        </Link>
 
         <button
           className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-green-200 px-5 py-3 text-gray-500 transition hover:bg-green-200 hover:text-green-700 focus:outline-none focus:ring"
@@ -54,6 +56,13 @@ export default function Home() {
     </div>
   </div>
 </header>
+
+<div className="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+  <div className="h-32 rounded-lg bg-gray-200"></div>
+  <div className="h-32 rounded-lg bg-gray-200"></div>
+  <div className="h-32 rounded-lg bg-gray-200"></div>
+  <div className="h-32 rounded-lg bg-gray-200"></div>
+</div>
     </>
   }
 

@@ -14,7 +14,7 @@ export default function Header(){
     if  (session) {
         return <>
         <header className="bg-white border-b sticky top-0">
-  <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+  <div className=" lg:px-8">
     <div className="flex h-16 items-center justify-between">
       <div className="md:flex md:items-center md:gap-12">
         <a className="block text-teal-600" href="#">
@@ -33,7 +33,7 @@ export default function Header(){
               <Link className={location.pathname === '/' ? active : inactive} href="#"> Dashboard </Link>
             </li>
             <li>
-              <Link className={location.pathname === '/products' ? active : inactive} href="#"> Products </Link>
+              <Link className={location.pathname === '/products' ? active : inactive} href="/products"> Products </Link>
             </li>
             <li>
               <Link className={location.pathname === '/categories' ? active : inactive} href="#"> Categories </Link>
